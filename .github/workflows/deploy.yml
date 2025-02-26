@@ -5,7 +5,6 @@ on:
     branches:
       - main
 
-
 permissions:
   contents: read
   pages: write
@@ -24,10 +23,12 @@ jobs:
         run: npm ci
       - name: Build React app
         run: npm run build
-      - uses: actions/upload-artifact@v4
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v2  # ✅ Correct upload action
         with:
-          path: ./build
+          name: github-pages  # ✅ Set artifact name
+          path: ./build  # ✅ Ensure this points to your built React files
+
   deploy:
     runs-on: ubuntu-22.04
     needs: build
@@ -36,8 +37,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         id: deployment
-        uses: actions/deploy-pages@v2
-    
-    
+        uses: actions/deploy-pages@v2  # ✅ Correct deploy action
+        with:
+          artifact_name: github-pages  # ✅ Ensure deploy action matches artifact name
