@@ -23,11 +23,10 @@ jobs:
         run: npm ci
       - name: Build React app
         run: npm run build
-      - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v2  # ✅ Correct upload action
+      - uses: actions/upload-artifact@v4
         with:
-          name: github-pages  # ✅ Set artifact name
-          path: ./build  # ✅ Ensure this points to your built React files
+          name: github-pages  # Add this explicit name
+          path: ./build
 
   deploy:
     runs-on: ubuntu-22.04
@@ -38,6 +37,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2  # ✅ Correct deploy action
-        with:
-          artifact_name: github-pages  # ✅ Ensure deploy action matches artifact name
+        uses: actions/deploy-pages@v2
