@@ -27,7 +27,7 @@ jobs:
         run: npm run build
       
       - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v2  # Specialized for Pages
+        uses: actions/upload-pages-artifact@v3  # Specialized for Pages
         with:
           path: ./build/  # Path to your built files
 
