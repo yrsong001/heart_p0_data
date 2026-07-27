@@ -206,7 +206,8 @@ export const myViewConfig = {
         "featureFilter": "genes"
       },
       "props": {
-        "title": "Gene List"
+        "title": "Gene List",
+        "helpText": "The list displays genes included in postnatal heart."
       },
       "x": 9,
       "y": 0,
@@ -220,7 +221,8 @@ export const myViewConfig = {
         "featureFilter": "cc"
       },
       "props": {
-        "title": "Cell Communication"
+        "title": "Cell Communication List",
+        "helpText": "The list displays ligand-receptor pairs (both direct and indirect communication) included in postnatal heart."
       },
       "x": 9,
       "y": 4,
@@ -234,7 +236,8 @@ export const myViewConfig = {
         "featureFilter": "tf"
       },
       "props": {
-        "title": "TF List"
+        "title": "TF List",
+        "helpText": "The list displays transcription factors included in postnatal heart."
       },
       "x": 9,
       "y": 8,
