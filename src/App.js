@@ -7,7 +7,7 @@ const itemCount = (items) => `${items.length.toLocaleString()} items`;
 
 const featureListInfoByTitle = {
   'Gene List': itemCount(featureFilters.genes),
-  'Cell Communication': itemCount(featureFilters.cc),
+  'Cell Communication List': itemCount(featureFilters.cc),
   'TF List': itemCount(featureFilters.tf),
 };
 
