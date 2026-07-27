@@ -154,6 +154,13 @@ export const myViewConfig = {
       "genes": featureFilters.genes,
       "cc": featureFilters.cc,
       "tf": featureFilters.tf
+    },
+    "obsSetExpansion": {
+      "cellTypes": [
+        [
+          "Cytospace.final.anno"
+        ]
+      ]
     }
   },
   "layout": [
@@ -181,7 +188,11 @@ export const myViewConfig = {
     {
       "component": "obsSets",
       "coordinationScopes": {
-        "dataset": "A"
+        "dataset": "A",
+        "obsSetExpansion": "cellTypes"
+      },
+      "props": {
+        "title": "Cell Types"
       },
       "x": 6,
       "y": 6,
@@ -209,7 +220,7 @@ export const myViewConfig = {
         "featureFilter": "cc"
       },
       "props": {
-        "title": "CC List"
+        "title": "Cell Communication"
       },
       "x": 9,
       "y": 4,
